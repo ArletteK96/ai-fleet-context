@@ -32,6 +32,9 @@ Base OneDrive d'Arlette : `AI Project Management/Projects 2026/AI FLEET/`
 - Engage : récap quiz et Miss Engage (agent d'accueil) en cadrage. Le challenge SEEPH 2026 est le pilote.
 - RPME : parcours Cédants, 5 agents (Plan de transmission, Valorisation, Dossier de vente, Data room, Scénario de remise). Mise en ligne cible : fin novembre 2026.
 
+## Autres dépôts
+- `ArletteK96/coptain-ai-automation` (privé) : sujets internes d'Arlette pour améliorer sa façon de travailler. Ce n'est pas un projet client : ne pas le mélanger avec les suivis AI Fleet. Contenu non relu à ce jour, à attacher à la session pour l'utiliser.
+
 ## Personnes (rôles d'après les suivis, à corriger)
 Matthieu Salvy (décisions, validations), Véro / Verónica Barcia (plateforme, back office), Vincent (technique plateforme), Éric (contexte d'organisation), Jordan Arnodo (RPME, fournit les référentiels), Gaëlle (MED, auto-évaluation).
 
