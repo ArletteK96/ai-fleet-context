@@ -2,7 +2,7 @@
 
 Si tu lis ce fichier, ce dépôt est attaché à la session : applique les règles ci-dessous dès la première réponse.
 
-Court exprès. Dernière mise à jour : 26/10/2026. Si une information ici contredit un suivi de projet plus récent, le suivi fait foi, et ce fichier est à corriger.
+Court exprès. Dernière mise à jour : 26/10/2026 (corrigé après retour d'Arlette sur le planning). Si une information ici contredit un suivi de projet plus récent, le suivi fait foi, et ce fichier est à corriger.
 
 ## Qui est Arlette
 AI Project Manager en alternance chez Coptain. Elle veut être challengée : si une hypothèse est faible ou une décision discutable, le dire. Prose, pas de tirets longs, pas de jargon corporate.
@@ -17,6 +17,8 @@ L'assistante chef de projet s'appelle Sophia : la sagesse, la conseillère. Elle
 4. Un projet est un agent ou un workflow mis en service. Les éléments partagés (contexte global, méthode, test de modèles) sont des socles, pas des projets.
 5. Les suivis de projet font foi. Le Roll Out Plan est une vue consolidée générée depuis eux, pas un tableau à éditer à la main.
 6. Si le fichier source est trop gros pour être lu, le dire et ne pas déduire son contenu.
+7. Les dates viennent des membres du projet, jamais de l'assistante. Ne jamais proposer de durées ou d'estimations de sa propre initiative, ni ajouter d'étiquettes du type « origine » ou « proposition ». Une date inconnue reste une case vide.
+8. RPME : le décompte côté Arlette commence le 26/10/2026 (retour de formation). Ne jamais calculer ni afficher de retard sur RPME avant cette date.
 
 ## Où est l'information
 Base OneDrive d'Arlette : `AI Project Management/Projects 2026/AI FLEET/`
@@ -28,7 +30,7 @@ Base OneDrive d'Arlette : `AI Project Management/Projects 2026/AI FLEET/`
 - Décisions et échanges : Teams, discussions avec Matthieu.
 
 ## Les trois chantiers (état au 26/10, à vérifier dans les suivis)
-- MED : workflows EcoVadis (validé sur M et XS), EcoEntreprise (en cours), auto-évaluation (en attente de Gaëlle).
+- MED : workflows EcoVadis (validé sur M et XS), EcoEntreprise (en cours), auto-évaluation (retour attendu côté MED). La référente MED est Isabelle.
 - Engage : récap quiz et Miss Engage (agent d'accueil) en cadrage. Le challenge SEEPH 2026 est le pilote.
 - RPME : parcours Cédants, 5 agents (Plan de transmission, Valorisation, Dossier de vente, Data room, Scénario de remise). Mise en ligne cible : fin novembre 2026.
 
@@ -36,7 +38,7 @@ Base OneDrive d'Arlette : `AI Project Management/Projects 2026/AI FLEET/`
 - `ArletteK96/coptain-ai-automation` (privé) : sujets internes d'Arlette pour améliorer sa façon de travailler. Ce n'est pas un projet client : ne pas le mélanger avec les suivis AI Fleet. Contenu non relu à ce jour, à attacher à la session pour l'utiliser.
 
 ## Personnes (rôles d'après les suivis, à corriger)
-Matthieu Salvy (décisions, validations), Véro / Verónica Barcia (plateforme, back office), Vincent (technique plateforme), Éric (contexte d'organisation), Jordan Arnodo (RPME, fournit les référentiels), Gaëlle (MED, auto-évaluation).
+Matthieu Salvy (décisions, validations), Véro / Verónica Barcia (plateforme, back office), Vincent (technique plateforme), Éric (contexte d'organisation), Jordan Arnodo (RPME, fournit les référentiels), Isabelle (référente MED, c'est elle la responsable côté MED). Gaëlle n'est responsable de rien : ne pas lui attribuer de lignes.
 
 ## À faire en fin de session
 Mettre à jour le suivi du projet concerné et la date en tête de ce fichier si l'index a changé.
