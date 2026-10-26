@@ -3,7 +3,7 @@ from openpyxl import Workbook
 from openpyxl.styles import Font, PatternFill, Alignment, Border, Side
 from openpyxl.formatting.rule import FormulaRule
 from openpyxl.worksheet.datavalidation import DataValidation
-from openpyxl.worksheet.properties import PageSetupProperties
+from openpyxl.worksheet.properties import PageSetupProperties, Outline
 from openpyxl.utils import get_column_letter as L
 
 import sys
@@ -50,28 +50,24 @@ rows = [
 ("M16","MED","EcoEntreprise","Writer: stabilise part 1","Arlette",IP,"M15",None,None,"Writer v1 tested on 21/10",None,None),
 ("M17","MED","EcoEntreprise","Connection to MED Missions","Arlette",NS,"M16",None,None,"",None,None),
 ("M18","MED","Self-assessment","Waiting for feedback from the MED side","Isabelle",NS,"",None,None,"The MED tracker says 'waiting for Gaëlle'. Isabelle is the MED referent",None,None),
-("E1a","Engage","Quiz recap","Scoping","Matthieu",D_,"",d(1,10),d(1,10),"Scoping meeting held on 01/10",None,None),
-("E1b","Engage","Miss Engage","Scoping","Matthieu",D_,"",d(1,10),d(1,10),"Scoping meeting held on 01/10",None,None),
+("E1a","Engage","Quiz recap","Kick-off meeting","Matthieu",D_,"",None,d(1,10),"Held on 01/10",None,None),
+("E1b","Engage","Miss Engage","Kick-off meeting","Matthieu",D_,"",None,d(1,10),"Held on 01/10",None,None),
 ("E2a","Engage","Quiz recap","First assessment: preliminary evaluation with the plugin","Arlette",D_,"E1a",None,d(9,10),"Éric's input received on 09/10. 4 to 6 agents for Engage, level 4. Start with the quiz recap",None,None),
 ("E2b","Engage","Miss Engage","First assessment: preliminary evaluation with the plugin","Arlette",D_,"E1b",None,d(9,10),"Éric's input received on 09/10. 4 to 6 agents for Engage, level 4. Welcome agent: one agent, two contexts",None,None),
-("E3a","Engage","Quiz recap","Decision of 14/10: start with the quiz recap, ready for the SEEPH pilot","Arlette",D_,"E2a",None,d(14,10),"",None,None),
-("E3b","Engage","Miss Engage","Decision of 14/10: a single chat agent for onboarding and late joiners, ready for the SEEPH pilot","Arlette",D_,"E2b",None,d(14,10),"Matthieu's vision",None,None),
-("E4","Engage","Quiz recap","Validation document","Arlette",IP,"E3a",None,None,"Draft v6 on 26/10",None,None),
-("E5","Engage","Miss Engage","PRD of the welcome agent","Arlette",IP,"E3b",None,None,"Draft v3 on 26/10",None,None),
+("E4","Engage","Quiz recap","Validation document","Arlette",IP,"E2a",None,None,"Draft v6 on 26/10",None,None),
+("E5","Engage","Miss Engage","PRD of the welcome agent","Arlette",IP,"E2b",None,None,"Draft v3 on 26/10",None,None),
 ("E6","Engage","Quiz recap","Decide: manual or automatic trigger, and who validates before publication","Arlette",NS,"E4",d(30,10),None,"Target: end of the week, to start the build on 02/11. To decide before sending to Vincent",None,None),
 ("E8a","Engage","Quiz recap","Data arrival from Typeform and the platform: Vincent's answer","Vincent",BL,"",d(30,10),None,"Target: end of the week, to start the build on 02/11. To confirm with Vincent. Blocking according to the evaluation of 09/10",None,None),
 ("E8b","Engage","Miss Engage","Can the chat read the participant's progress and the challenge figures: Vincent's answer","Vincent",BL,"",d(30,10),None,"Target: end of the week, to start the build on 02/11. To confirm with Vincent",None,None),
 ("E9a","Engage","Quiz recap","Respondent and team thresholds, organisation context","Éric",BL,"",None,None,"Values requested on 09/10",None,None),
 ("E9b","Engage","Miss Engage","Organisation context and thresholds","Éric",BL,"",None,None,"Values requested on 09/10",None,None),
-("E10a","Engage","Quiz recap","Date of the SEEPH challenge","Matthieu",AC,"",None,None,"No date found",None,None),
-("E10b","Engage","Miss Engage","Date of the SEEPH challenge","Matthieu",AC,"",None,None,"No date found",None,None),
 ("E11","Engage","Quiz recap",VAL,TBN,NS,"",d(27,10),None,FIRSTSHARE+cm_val,4,None),
 ("E12","Engage","Quiz recap","Build","Arlette",NS,"E11",d(3,11),None,BC+". Not before 03/11, one week after the documents are shared (Arlette)",2,1),
 ("E13","Engage","Quiz recap","Test","Arlette",NS,"E12",None,None,"",3,None),
 ("E14","Engage","Miss Engage",VAL,TBN,NS,"",d(27,10),None,FIRSTSHARE+cm_val,4,None),
 ("E15","Engage","Miss Engage","Build","Arlette",NS,"E14",d(3,11),None,BC+". Not before 03/11, one week after the documents are shared (Arlette)",2,1),
 ("E16","Engage","Miss Engage","Test","Arlette",NS,"E15",None,None,"",3,None),
-("R0","RPME","W1 Transmission plan","Kick-off with Arlette and Matthieu","Jordan",D_,"",d(16,10),d(16,10),"Kick-off for the whole RPME project",None,None),
+("R0","RPME","RPME","Kick-off with Arlette and Matthieu","Jordan",D_,"",d(16,10),d(16,10),"Kick-off for the whole RPME project",None,None),
 ("R1","RPME","W1 Transmission plan","Reference material from Jordan","Jordan",IP,"",d(6,11),None,"First draft on 26/10. Date kept by Arlette on 26/10",None,None),
 ("R2","RPME","W1 Transmission plan","Tax expert: identify and contact","Jordan + expert",NS,"",d(23,10),None,"",None,None),
 ("R3","RPME","W1 Transmission plan","Environment set up: mission groups, segments, profile fields","Jordan / Vero",NS,"",d(30,10),None,"Needed by all four workflows",None,None),
@@ -80,7 +76,7 @@ rows = [
 ("R6","RPME","W1 Transmission plan","Build","Jordan",NS,"R5",None,None,BC+". Jordan end to end, Arlette in support. Starting duration to confirm with Jordan",2,1),
 ("R7","RPME","W1 Transmission plan","Test","Jordan",NS,"R6",None,None,"Jordan tests, Arlette in support",3,None),
 ("R8","RPME","W1 Transmission plan","Pilot validation by Matthieu and Jacob","Matthieu / Jacob",NS,"R7",None,None,"Validation delay to be set",None,None),
-("R9","RPME","W1 Transmission plan","Go-live","RPME team",NS,"",d(30,11),None,"Target: end of November",None,None),
+("R9","RPME","RPME","Go-live","RPME team",NS,"",d(30,11),None,"Target: end of November",None,None),
 ("R10","RPME","W3 Valuation","Reference material from Jordan","Jordan",IP,"",d(6,11),None,"First draft on 26/10. Date kept by Arlette on 26/10",None,None),
 ("R11","RPME","W3 Valuation","Valuation expert: identify and contact","Jordan + expert",NS,"",d(23,10),None,"W4 (paid report) also needs the valuation multiples table, which does not exist",None,None),
 ("R12","RPME","W3 Valuation","PRD and technical document: writing, questions asked","Jordan",NS,"R10",None,None,"Jordan end to end, Arlette in support. 1 day to write and ask the questions (Arlette's value, to confirm with Jordan)",1,None),
@@ -88,20 +84,17 @@ rows = [
 ("R14","RPME","W3 Valuation","Build","Jordan",NS,"R13",None,None,BC+". Jordan end to end, Arlette in support. Starting duration to confirm with Jordan",2,1),
 ("R15","RPME","W3 Valuation","Test","Jordan",NS,"R14",None,None,"Jordan tests, Arlette in support",3,None),
 ("R16","RPME","W3 Valuation","Pilot validation by Matthieu and Jacob","Matthieu / Jacob",NS,"R15",None,None,"Validation delay to be set",None,None),
-("R17","RPME","W3 Valuation","Go-live","RPME team",NS,"",d(30,11),None,"Target: end of November",None,None),
 ("R18","RPME","W5 Sales file","Gather the existing document templates","Jordan",NS,"",d(16,10),None,"Jordan's date",None,None),
 ("R19","RPME","W5 Sales file","Reference material from Jordan","Jordan",NS,"",None,None,"First draft on 26/10. No date from Jordan. Matthieu must decide the output format (PowerPoint or Word) and the template",None,None),
 ("R20","RPME","W5 Sales file","PRD and technical document: writing, questions asked","Arlette",NS,"R8",None,None,"Starts once the two pilots are validated (Jordan's condition). Arlette writes. 1 day to write and ask the questions",1,None),
 ("R21","RPME","W5 Sales file","PRD then technical document: validation",TBN,NS,"R20",None,None,cm_val,4,None),
 ("R22","RPME","W5 Sales file","Build","Arlette",NS,"R21",None,None,BC,2,1),
 ("R23","RPME","W5 Sales file","Test","Arlette",NS,"R22",None,None,"",3,None),
-("R24","RPME","W5 Sales file","Go-live","RPME team",NS,"",d(30,11),None,"Target: end of November",None,None),
 ("R25","RPME","W7 Handover scenario","Reference material from Jordan","Jordan",NS,"",None,None,"First draft on 26/10. No date from Jordan",None,None),
 ("R26","RPME","W7 Handover scenario","PRD and technical document: writing, questions asked","Arlette",NS,"R8",None,None,"Starts once the two pilots are validated (Jordan's condition). Arlette writes. 1 day to write and ask the questions",1,None),
 ("R27","RPME","W7 Handover scenario","PRD then technical document: validation",TBN,NS,"R26",None,None,cm_val,4,None),
 ("R28","RPME","W7 Handover scenario","Build","Arlette",NS,"R27",None,None,BC,2,1),
 ("R29","RPME","W7 Handover scenario","Test","Arlette",NS,"R28",None,None,"",3,None),
-("R30","RPME","W7 Handover scenario","Go-live","RPME team",NS,"",d(30,11),None,"Target: end of November",None,None),
 ]
 rows += [
 ("T1","Transverse","Agent builder plugin","Update the plugin","Arlette",D_,"",d(18,9),d(18,9),"",None,None),
@@ -112,7 +105,7 @@ EXTRA = {"E12": ["E8a","E6"], "E15": ["E8b"], "R6": ["R3"], "R14": ["R3"], "R20"
 FIRST = 6; LAST = FIRST+len(rows)-1
 projects = []
 for r in rows:
-    if (r[1], r[2]) not in projects: projects.append((r[1], r[2]))
+    if r[2] != 'RPME' and (r[1], r[2]) not in projects: projects.append((r[1], r[2]))
 
 wb = Workbook(); sm = wb.active; sm.title = "Summary"
 pl = wb.create_sheet("Planning"); nt = wb.create_sheet("Notes")
@@ -125,6 +118,7 @@ nt["A4"] = "First Monday of the timeline"; nt["B4"] = d(7,9)
 for r in (3,4): nt[f"A{r}"].font = font(); nt[f"B{r}"].number_format = "dd/mm/yyyy"; nt[f"B{r}"].font = font(color="0000FF", bold=True); nt[f"B{r}"].fill = YEL
 REF = "Notes!$B$3"
 notes = [
+"Done lines are hidden in the Planning: click the + in the left margin to show them. The ID, After and Also after columns are hidden because they only feed the dates: unhide them to see the dependencies.",
 "One document: the Summary tab is calculated from the Planning tab. Edit the Planning only. If you add a project name in the Planning, add a row for it in the Summary.",
 "Dates come from the project members: Arlette's original plan, Jordan's tracker (RPME), the MED and Engage trackers, test series. A missing date stays an empty (yellow) cell.",
 "Durations are Arlette's starting values of 26/10: 2 working days of build, 3 working days of test. The PRD and technical document step takes 1 day of writing plus 4 days of validation, so it is ready within one week. Build and test follow the week after. Blue duration cells can be edited. The Agents column shows the planned number of agents (5 maximum per workflow) and does not drive any calculation.",
@@ -143,7 +137,7 @@ confirm = [
 "EcoVadis: the MED tracker says the shared version is v7-ton21, the test series of 14/10 says v3 final. Which one is right?",
 "Engage, 30/10 target for Vincent's answer and for the trigger decision: taken from 'this week'. To be confirmed with Vincent.",
 "RPME W1 and W3: durations of Jordan's PRD, build and test are Arlette's starting values, to confirm with Jordan. Who validates the PRD and technical documents is still to be named.",
-"No SEEPH 2026 challenge date was found. The EcoVadis reference file ECOVADIS.md was too large to be read: the EcoVadis state comes from the MED tracker and the test series.",
+"The EcoVadis reference file ECOVADIS.md was too large to be read: the EcoVadis state comes from the MED tracker and the test series.",
 ]
 for i,t in enumerate(confirm):
     c = nt.cell(row=r0+1+i, column=1, value=t); c.font = font(); c.alignment = Alignment(wrap_text=True, vertical="top"); nt.row_dimensions[r0+1+i].height = 32
@@ -163,9 +157,10 @@ pl.row_dimensions[5].height = 38
 A_, M_, N_, O_ = (f"${x}${FIRST}:${x}${LAST}" for x in "AMNO")
 NW = 16; W0 = 19
 for k in range(NW):
-    col = W0+k; c = pl.cell(row=5, column=col)
-    c.value = "=Notes!$B$4" if k == 0 else f"={L(col-1)}5+7"
-    c.number_format = "dd/mm"; c.font = font(bold=True,color="FFFFFF",size=8); c.fill = HEAD
+    col = W0+k
+    pl.cell(row=4, column=col, value="=Notes!$B$4" if k == 0 else f"={L(col-1)}4+7").number_format = "dd/mm"
+    c = pl.cell(row=5, column=col, value=f'="W"&WEEKNUM({L(col)}4,21)')
+    c.font = font(bold=True,color="FFFFFF",size=8); c.fill = HEAD
     c.alignment = Alignment(horizontal="center", vertical="center", text_rotation=90); pl.column_dimensions[L(col)].width = 4.4
 for i, r in enumerate(rows):
     n = FIRST+i
@@ -201,12 +196,14 @@ for i, r in enumerate(rows):
     if du is not None: pl.cell(row=n, column=10).font = font(color="0000FF", bold=True)
     for k in range(NW):
         col = W0+k; cl_ = L(col)
-        c = pl.cell(row=n, column=col, value=f'=IF(OR($L{n}="",$O{n}=""),"",IF(AND($L{n}<={cl_}$5+6,$O{n}>={cl_}$5),1,""))')
+        c = pl.cell(row=n, column=col, value=f'=IF(OR($L{n}="",$O{n}=""),"",IF(AND($L{n}<={cl_}$4+6,$O{n}>={cl_}$4),1,""))')
         c.number_format = ";;;"
     pl.row_dimensions[n].height = 30
+    if st == D_:
+        pl.row_dimensions[n].outlineLevel = 1; pl.row_dimensions[n].hidden = True
 dv = DataValidation(type="list", formula1='"Not started,In progress,Done,Blocked,To confirm"', allow_blank=True)
 pl.add_data_validation(dv); dv.add(f"F{FIRST}:F{LAST}")
-rg = f"{L(W0)}{FIRST}:{L(W0+NW-1)}{LAST}"; tl = f"{L(W0)}{FIRST}"; hd = f"{L(W0)}$5"
+rg = f"{L(W0)}{FIRST}:{L(W0+NW-1)}{LAST}"; tl = f"{L(W0)}{FIRST}"; hd = f"{L(W0)}$4"
 pl.conditional_formatting.add(rg, FormulaRule(formula=[f'AND({tl}=1,$F{FIRST}="Done")'], fill=fill("A9D18E"), stopIfTrue=True))
 pl.conditional_formatting.add(rg, FormulaRule(formula=[f'AND({tl}=1,ISNUMBER($Q{FIRST}),$Q{FIRST}>0)'], fill=fill("E57373"), stopIfTrue=True))
 pl.conditional_formatting.add(rg, FormulaRule(formula=[f'AND({tl}=1,$F{FIRST}="In progress")'], fill=fill("9DC3E6"), stopIfTrue=True))
@@ -219,6 +216,9 @@ pl.conditional_formatting.add(f"F{FIRST}:F{LAST}", FormulaRule(formula=[f'$F{FIR
 pl.conditional_formatting.add(f"F{FIRST}:F{LAST}", FormulaRule(formula=[f'$F{FIRST}="In progress"'], fill=fill("DDEBF7")))
 pl.conditional_formatting.add(f"F{FIRST}:F{LAST}", FormulaRule(formula=[f'OR($F{FIRST}="Blocked",$F{FIRST}="To confirm")'], fill=fill("FCE4D6")))
 pl.column_dimensions["O"].hidden = True; pl.column_dimensions["Q"].hidden = True
+pl.row_dimensions[4].hidden = True
+for col_ in "AGHI": pl.column_dimensions[col_].hidden = True
+pl.sheet_properties.outlinePr = Outline(summaryBelow=False)
 pl.freeze_panes = "E6"; pl.auto_filter.ref = f"A5:R{LAST}"
 pl.page_setup.orientation = "landscape"; pl.page_setup.fitToWidth = 1; pl.page_setup.fitToHeight = 0
 
@@ -234,9 +234,10 @@ for i,(h,w) in enumerate(zip(sh,sw), start=1):
 sm.row_dimensions[4].height = 38
 SW0 = 12
 for k in range(NW):
-    col = SW0+k; c = sm.cell(row=4, column=col)
-    c.value = "=Notes!$B$4" if k == 0 else f"={L(col-1)}4+7"
-    c.number_format = "dd/mm"; c.font = font(bold=True,color="FFFFFF",size=8); c.fill = HEAD
+    col = SW0+k
+    sm.cell(row=3, column=col, value="=Notes!$B$4" if k == 0 else f"={L(col-1)}3+7").number_format = "dd/mm"
+    c = sm.cell(row=4, column=col, value=f'="W"&WEEKNUM({L(col)}3,21)')
+    c.font = font(bold=True,color="FFFFFF",size=8); c.fill = HEAD
     c.alignment = Alignment(horizontal="center", vertical="center", text_rotation=90); sm.column_dimensions[L(col)].width = 4.4
 PC, PF, PL, PO, PQ = (f"Planning!${x}${FIRST}:${x}${LAST}" for x in "CFLOQ")
 for i,(cl,pj) in enumerate(projects):
@@ -257,14 +258,14 @@ for i,(cl,pj) in enumerate(projects):
         if col in (9,10): c.number_format = "dd/mm/yy"
     for k in range(NW):
         col = SW0+k; cl_ = L(col)
-        c = sm.cell(row=n, column=col, value=f'=IF(OR($I{n}="",$J{n}=""),"",IF(AND($I{n}<={cl_}$4+6,$J{n}>={cl_}$4),1,""))')
+        c = sm.cell(row=n, column=col, value=f'=IF(OR($I{n}="",$J{n}=""),"",IF(AND($I{n}<={cl_}$3+6,$J{n}>={cl_}$3),1,""))')
         c.number_format = ";;;"
     sm.row_dimensions[n].height = 22
 SL = 4+len(projects)
 for val, bg, fc in [("Done","C6EFCE","006100"),("In progress","BDD7EE","1F4E79"),("Blocked","F4B183","833C0B")]:
     sm.conditional_formatting.add(f"C5:C{SL}", FormulaRule(formula=[f'$C5="{val}"'], fill=fill(bg), font=Font(name=F, bold=True, color=fc)))
 sm.conditional_formatting.add(f"K5:K{SL}", FormulaRule(formula=['AND(ISNUMBER($K5),$K5>0)'], font=Font(name=F,bold=True,color="C00000")))
-srg = f"{L(SW0)}5:{L(SW0+NW-1)}{SL}"; stl = f"{L(SW0)}5"; shd = f"{L(SW0)}$4"
+srg = f"{L(SW0)}5:{L(SW0+NW-1)}{SL}"; stl = f"{L(SW0)}5"; shd = f"{L(SW0)}$3"
 sm.conditional_formatting.add(srg, FormulaRule(formula=[f'AND({stl}=1,$C5="Done")'], fill=fill("A9D18E"), stopIfTrue=True))
 sm.conditional_formatting.add(srg, FormulaRule(formula=[f'AND({stl}=1,ISNUMBER($K5),$K5>0)'], fill=fill("E57373"), stopIfTrue=True))
 sm.conditional_formatting.add(srg, FormulaRule(formula=[f'AND({stl}=1,$C5="In progress")'], fill=fill("9DC3E6"), stopIfTrue=True))
@@ -272,5 +273,6 @@ sm.conditional_formatting.add(srg, FormulaRule(formula=[f'{stl}=1'], fill=fill("
 sm.conditional_formatting.add(srg, FormulaRule(formula=[f'AND($C$2>={shd},$C$2<={shd}+6)'], fill=fill("FFE699")))
 sm.conditional_formatting.add(f"{L(SW0)}4:{L(SW0+NW-1)}4", FormulaRule(formula=[f'AND($C$2>={shd},$C$2<={shd}+6)'], fill=fill("BF8F00")))
 sm.freeze_panes = "C5"
+sm.row_dimensions[3].hidden = True
 sm.page_setup.orientation = "landscape"; sm.page_setup.fitToWidth = 1; sm.page_setup.fitToHeight = 0
 wb.save(OUT); print("saved", len(rows), len(projects))
