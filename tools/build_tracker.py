@@ -47,7 +47,7 @@ rows = [
 ("M15","MED","EcoEntreprise","Task-planner: v16 chain tested","Arlette",D_,"M14",None,d(21,10),"4 runs, 3 clean",None,None),
 ("M16","MED","EcoEntreprise","Writer: stabilise (part 1 in lists)","Arlette",IP,"M15",None,None,"Writer v1 tested on 21/10",None,None),
 ("M17","MED","EcoEntreprise","Connection to MED Missions","Arlette",NS,"M16",None,None,"",None,None),
-("M18","MED","Self-assessment","Feedback expected on the MED side","Isabelle (MED)",BL,"",None,None,"The MED tracker says 'waiting for Gaëlle'. Isabelle is the MED referent",None,None),
+("M18","MED","Self-assessment","Waiting for feedback from the MED side","Isabelle (MED)",NS,"",None,None,"The MED tracker says 'waiting for Gaëlle'. Isabelle is the MED referent",None,None),
 ("E1a","Engage","Quiz recap","Scoping","Matthieu",AC,"",d(1,10),None,"Due date of the original plan, no status in the file",None,None),
 ("E1b","Engage","Miss Engage","Scoping","Matthieu",AC,"",d(1,10),None,"Due date of the original plan, no status in the file",None,None),
 ("E2a","Engage","Quiz recap","First assessment: preliminary evaluation with the plugin","Arlette",D_,"E1a",None,d(9,10),"4 to 6 agents for Engage, level 4. Start with the quiz recap",None,None),
@@ -58,49 +58,55 @@ rows = [
 ("E5","Engage","Miss Engage","PRD of the welcome agent","Arlette",IP,"E3b",None,None,"Draft v3 on 26/10",None,None),
 ("E6","Engage","Quiz recap","Decide: manual or automatic trigger, and who validates before publication","Arlette",NS,"E4",d(30,10),None,"Target: end of the week, to start the build on 02/11. To decide before sending to Vincent",None,None),
 ("E7","Engage","Miss Engage","Personality document: who writes it","Matthieu / Vero",NS,"E5",None,None,"",None,None),
-("E8","Engage","Quiz recap","Data arrival (Typeform and platform results): Vincent's answer","Vincent",BL,"",d(30,10),None,"Target: end of the week, to start the build on 02/11. To confirm with Vincent. Blocking according to the evaluation of 09/10",None,None),
-("E9","Engage","Quiz recap and Miss Engage","Respondent and team thresholds, organisation context","Éric",BL,"",None,None,"Values requested on 09/10",None,None),
-("E10","Engage","SEEPH 2026 (pilot)","Date of the SEEPH challenge","Matthieu",AC,"",None,None,"No date found",None,None),
+("E8a","Engage","Quiz recap","Data arrival (Typeform and platform results): Vincent's answer","Vincent",BL,"",d(30,10),None,"Target: end of the week, to start the build on 02/11. To confirm with Vincent. Blocking according to the evaluation of 09/10",None,None),
+("E8b","Engage","Miss Engage","Can the chat read the participant's progress and the challenge figures: Vincent's answer","Vincent",BL,"",d(30,10),None,"Target: end of the week, to start the build on 02/11. To confirm with Vincent",None,None),
+("E9a","Engage","Quiz recap","Respondent and team thresholds, organisation context","Éric",BL,"",None,None,"Values requested on 09/10",None,None),
+("E9b","Engage","Miss Engage","Organisation context and thresholds","Éric",BL,"",None,None,"Values requested on 09/10",None,None),
+("E10a","Engage","Quiz recap","Date of the SEEPH challenge (pilot)","Matthieu",AC,"",None,None,"No date found",None,None),
+("E10b","Engage","Miss Engage","Date of the SEEPH challenge (pilot)","Matthieu",AC,"",None,None,"No date found",None,None),
 ("E11","Engage","Quiz recap",VAL,TBN,NS,"",d(27,10),None,FIRSTSHARE+cm_val,4,None),
 ("E12","Engage","Quiz recap","Build","Arlette",NS,"E11",None,None,BC,2,1),
 ("E13","Engage","Quiz recap","Test","Arlette",NS,"E12",None,None,"",3,None),
 ("E14","Engage","Miss Engage",VAL,TBN,NS,"",d(27,10),None,FIRSTSHARE+cm_val,4,None),
 ("E15","Engage","Miss Engage","Build","Arlette",NS,"E14",None,None,BC,2,1),
 ("E16","Engage","Miss Engage","Test","Arlette",NS,"E15",None,None,"",3,None),
-("R1","RPME",PREP,"Kick-off with Arlette and Matthieu","Jordan",D_,"",d(16,10),d(16,10),"",None,None),
-("R2","RPME",PREP,"Gather the existing RPME document templates","Jordan",NS,"R1",d(16,10),None,"Jordan's date",None,None),
-("R3","RPME",PREP,"LOI (letter of intent) template created or sourced","Jordan",D_,"R1",d(16,10),None,"To be validated by Matthieu",None,None),
-("R4","RPME",PREP,"References per agent (knowledge base)","Jordan",IP,"R1",d(16,10),None,"First draft on 26/10: W1, W5, W7, W3. No Data room tab",None,None),
-("R5","RPME","W1 and W2 (tax part)","Tax expert: identify and contact","Jordan + expert",NS,"R1",d(23,10),None,"",None,None),
-("R6","RPME","W3 and W4 (valuation)","Valuation expert: identify and contact","Jordan + expert",NS,"R1",d(23,10),None,"",None,None),
-("R7","RPME",PREP,"Expert review of the LOI template","Jordan + expert",NS,"R3",d(23,10),None,"",None,None),
-("R8","RPME",PREP,"Environment: 4 mission groups, 4 segments, 11 profile fields","Jordan / Vero",NS,"R1",d(30,10),None,"",None,None),
-("R9","RPME",PREP,"Provide the material to Arlette and support her","Jordan",NS,"R4",d(6,11),None,"Date kept by Arlette on 26/10",None,None),
+("R1","RPME","W1 Transmission plan","Reference material from Jordan (knowledge base)","Jordan",IP,"",d(6,11),None,"First draft on 26/10. Date kept by Arlette on 26/10",None,None),
+("R2","RPME","W1 Transmission plan","Tax expert: identify and contact","Jordan + expert",NS,"",d(23,10),None,"",None,None),
+("R3","RPME","W1 Transmission plan","Environment set up: mission groups, segments, profile fields","Jordan / Vero",NS,"",d(30,10),None,"Needed by all four workflows",None,None),
+("R4","RPME","W1 Transmission plan","PRD and technical document: writing, questions asked","Jordan",NS,"R1",None,None,"Jordan end to end, Arlette in support. 1 day to write and ask the questions (Arlette's value, to confirm with Jordan)",1,None),
+("R5","RPME","W1 Transmission plan","PRD then technical document: validation",TBN,NS,"R4",None,None,cm_val,4,None),
+("R6","RPME","W1 Transmission plan","Build","Jordan",NS,"R5",None,None,BC+". Jordan end to end, Arlette in support. Starting duration to confirm with Jordan",2,1),
+("R7","RPME","W1 Transmission plan","Test","Jordan",NS,"R6",None,None,"Jordan tests, Arlette in support",3,None),
+("R8","RPME","W1 Transmission plan","Pilot validation by Matthieu and Jacob","Matthieu / Jacob",NS,"R7",None,None,"Validation delay to be set",None,None),
+("R9","RPME","W1 Transmission plan","Go-live (target)","RPME team",NS,"",d(30,11),None,"Target: end of November",None,None),
+("R10","RPME","W3 Valuation","Reference material from Jordan (knowledge base)","Jordan",IP,"",d(6,11),None,"First draft on 26/10. Date kept by Arlette on 26/10",None,None),
+("R11","RPME","W3 Valuation","Valuation expert: identify and contact","Jordan + expert",NS,"",d(23,10),None,"W4 (paid report) also needs the valuation multiples table, which does not exist",None,None),
+("R12","RPME","W3 Valuation","PRD and technical document: writing, questions asked","Jordan",NS,"R10",None,None,"Jordan end to end, Arlette in support. 1 day to write and ask the questions (Arlette's value, to confirm with Jordan)",1,None),
+("R13","RPME","W3 Valuation","PRD then technical document: validation",TBN,NS,"R12",None,None,cm_val,4,None),
+("R14","RPME","W3 Valuation","Build","Jordan",NS,"R13",None,None,BC+". Jordan end to end, Arlette in support. Starting duration to confirm with Jordan",2,1),
+("R15","RPME","W3 Valuation","Test","Jordan",NS,"R14",None,None,"Jordan tests, Arlette in support",3,None),
+("R16","RPME","W3 Valuation","Pilot validation by Matthieu and Jacob","Matthieu / Jacob",NS,"R15",None,None,"Validation delay to be set",None,None),
+("R17","RPME","W3 Valuation","Go-live (target)","RPME team",NS,"",d(30,11),None,"Target: end of November",None,None),
+("R18","RPME","W5 Sales file","Gather the existing document templates","Jordan",NS,"",d(16,10),None,"Jordan's date",None,None),
+("R19","RPME","W5 Sales file","Reference material from Jordan (knowledge base)","Jordan",NS,"",None,None,"First draft on 26/10. No date from Jordan. Matthieu must decide the output format (PowerPoint or Word) and the template",None,None),
+("R20","RPME","W5 Sales file","PRD and technical document: writing, questions asked","Arlette",NS,"R8",None,None,"Starts once the two pilots are validated (Jordan's condition). Arlette writes. 1 day to write and ask the questions",1,None),
+("R21","RPME","W5 Sales file","PRD then technical document: validation",TBN,NS,"R20",None,None,cm_val,4,None),
+("R22","RPME","W5 Sales file","Build","Arlette",NS,"R21",None,None,BC,2,1),
+("R23","RPME","W5 Sales file","Test","Arlette",NS,"R22",None,None,"",3,None),
+("R24","RPME","W5 Sales file","Go-live (target)","RPME team",NS,"",d(30,11),None,"Target: end of November",None,None),
+("R25","RPME","W7 Handover scenario","Reference material from Jordan (knowledge base)","Jordan",NS,"",None,None,"First draft on 26/10. No date from Jordan",None,None),
+("R26","RPME","W7 Handover scenario","PRD and technical document: writing, questions asked","Arlette",NS,"R8",None,None,"Starts once the two pilots are validated (Jordan's condition). Arlette writes. 1 day to write and ask the questions",1,None),
+("R27","RPME","W7 Handover scenario","PRD then technical document: validation",TBN,NS,"R26",None,None,cm_val,4,None),
+("R28","RPME","W7 Handover scenario","Build","Arlette",NS,"R27",None,None,BC,2,1),
+("R29","RPME","W7 Handover scenario","Test","Arlette",NS,"R28",None,None,"",3,None),
+("R30","RPME","W7 Handover scenario","Go-live (target)","RPME team",NS,"",d(30,11),None,"Target: end of November",None,None),
 ]
-def jb(i, proj):
-    return [
- (f"R{i}","RPME",proj,DOC,"Jordan",NS,"R9",None,None,J_DOC,1,None),
- (f"R{i+1}","RPME",proj,VAL,TBN,NS,f"R{i}",None,None,cm_val,4,None),
- (f"R{i+2}","RPME",proj,"Build","Jordan",NS,f"R{i+1}",None,None,"Jordan end to end, Arlette in support. "+BC+". Starting duration to confirm with Jordan",2,1),
- (f"R{i+3}","RPME",proj,"Test","Jordan",NS,f"R{i+2}",None,None,"Jordan tests, Arlette in support",3,None)]
-def ab(i, proj):
-    return [
- (f"R{i}","RPME",proj,DOC,"Arlette",NS,"R18",None,None,A_DOC,1,None),
- (f"R{i+1}","RPME",proj,VAL,TBN,NS,f"R{i}",None,None,cm_val,4,None),
- (f"R{i+2}","RPME",proj,"Build","Arlette",NS,f"R{i+1}",None,None,BC+". Once the pilots are validated (Jordan's condition)",2,1),
- (f"R{i+3}","RPME",proj,"Test","Arlette",NS,f"R{i+2}",None,None,"",3,None)]
-rows += jb(10, P1) + jb(14, P3)
-rows += [("R18","RPME","W1 and W3","Pilot validation by Matthieu and Jacob","Matthieu / Jacob",NS,"R17",None,None,"Validation delay to be set",None,None)]
-rows += ab(19, P5) + ab(23, P7)
 rows += [
-("R27","RPME","Buyer and Expert roadmaps","Agents and workflows","Jordan / Matthieu",NS,"",None,None,"After the Cédants (sellers) roadmap, according to Jordan's tracker. Jordan's question: does this fall within Arlette's workload before the launch?",None,None),
-("R28","RPME","Assisted ad creation","Workflow (requalified as a workflow according to Vero)",TBN,AC,"",None,None,"Owner to confirm with Matthieu and Vero",None,None),
-("R29","RPME","RPME: go-live","Go-live of the Cédants journey","RPME team",NS,"",d(30,11),None,"Target: end of November",None,None),
 ("T1","Transverse","Agent builder plugin","Update the plugin","Arlette",D_,"",d(18,9),d(18,9),"",None,None),
-("T2","Transverse","New models","Choice of the new model: success criteria to validate, then shortlist test","Arlette",IP,"",None,None,"Applies to all clients. No run before validation. Waiting on Matthieu: data residency, budget, model route",None,None),
+("T2","Transverse","New LLM models","Choice of the new model: success criteria to validate, then shortlist test","Arlette",IP,"",None,None,"Applies to all clients. No run before validation. Waiting on Matthieu: data residency, budget, model route",None,None),
 ("T3","Transverse","Rework of some agents","Target of about 5 agents per workflow, once more powerful models are integrated","Arlette",NS,"T2",None,None,"Direction of 22/10: 23 agents for 2 workflows, not maintainable",None,None),
 ]
-EXTRA = {"E12": ["E8","E6"], "E15": ["E8","E7"]}
+EXTRA = {"E12": ["E8a","E6"], "E15": ["E8b","E7"], "R6": ["R3"], "R14": ["R3"], "R20": ["R16","R19"], "R26": ["R16","R25"]}
 FIRST = 6; LAST = FIRST+len(rows)-1
 projects = []
 for r in rows:
@@ -122,8 +128,8 @@ notes = [
 "Durations are Arlette's starting values of 26/10: 2 working days of build, 3 working days of test. The PRD and technical document step takes 1 day of writing plus 4 days of validation, so it is ready within one week. Build and test follow the week after. Blue duration cells can be edited. The Agents column shows the planned number of agents (5 maximum per workflow) and does not drive any calculation.",
 "Start (calc.): next working day after the end of the 'After' and 'Also after' lines for lines with a duration; otherwise the end of the 'After' line, or the due date. If one of these lines has no date, the line has no date. Public holidays are not taken into account.",
 "Overdue (days) = days between the due date and the reference date for an open line, or between the due date and the actual end for a late finished line. RPME: no overdue is calculated. Arlette's count starts on 26/10, when she came back from training.",
-"Builds depend on the choice of the new model (line T2). It is written as a comment and does not move any date until the model has a date.",
-"RPME: Arlette builds W5 and W7. Jordan does W1 and W3 end to end (PRD, technical document, build, test) and Arlette is in support: those lines track what Jordan has to do. Jordan's own durations are to be confirmed with him.",
+"Builds depend on the choice of the new LLM model (line T2). It is written as a comment and does not move any date until the model has a date.",
+"RPME: the projects are W1, W3, W5 and W7 only (nobody owns W2). Everything else (reference material, experts, environment, templates, go-live) is a step inside one of them. Arlette builds W5 and W7. Jordan does W1 and W3 end to end and Arlette is in support: those lines track what Jordan has to do. Jordan's own durations are to be confirmed with him.",
 "MED: Isabelle is the MED referent. 'MED crew' of the original plan is replaced by Isabelle and Gaëlle is not responsible for anything: to confirm line by line.",
 "Sources of truth: the project trackers (MED, Engage, RPME). This document is a view of them, regenerated on request.",
 ]
@@ -135,6 +141,7 @@ confirm = [
 "EcoVadis: the MED tracker says the shared version is v7-ton21, the test series of 14/10 says v3 final. Which one is right?",
 "Engage, 30/10 target for Vincent's answer and for the trigger decision: taken from 'this week'. To be confirmed with Vincent.",
 "RPME W1 and W3: durations of Jordan's PRD, build and test are Arlette's starting values, to confirm with Jordan. Who validates the PRD and technical documents is still to be named.",
+"Not tracked as projects, open questions from Jordan: Buyer and Expert roadmaps, and the assisted ad creation (requalified as a workflow according to Vero). Does either fall within Arlette's workload before the launch?",
 "No SEEPH 2026 challenge date was found. The EcoVadis reference file ECOVADIS.md was too large to be read: the EcoVadis state comes from the MED tracker and the test series.",
 ]
 for i,t in enumerate(confirm):
