@@ -37,7 +37,6 @@ rows = [
 ("M5","MED","EcoVadis","Final version and validation of the reference document","Arlette",D_,"M4",d(25,9),d(12,10),"Last version shared on 02/10 with Gaëlle and Isabelle, feedback on 12/10, update of the rules requested",None,None),
 ("M6","MED","MED global","MED global context","Isabelle",D_,"M4",d(28,9),None,"Finalised (Arlette, 26/10). Owner changed from 'MED crew' to Isabelle, MED referent: to confirm",None,None),
 ("M7","MED","EcoVadis","Build the agent-specific context","Arlette",D_,"M5",d(29,9),d(15,10),"Workflow ready to test on staging on 15/10",None,None),
-("M8","MED","EcoVadis","Ticket: input upload format","To be named",AC,"",None,None,"Mentioned in a comment of the original plan, attached to EcoVadis: to confirm. Status and owner to confirm",None,None),
 ("M9","MED","EcoVadis","Build the workflow: EcoVadis","Arlette",D_,"M7",d(2,10),d(15,10),"Ready to test on staging on 15/10. Sources differ on the shared version (v7-ton21 or v3 final)",None,None),
 ("M10","MED","EcoVadis","Test the workflow: EcoVadis","Arlette",D_,"M9",None,d(14,10),"Initial feedback was inconclusive. Test series of 13 to 14/10: M and XS validated",None,None),
 ("M11","MED","EcoVadis","Validate the workflow","Arlette / Matthieu / Vero",D_,"M10",None,d(14,10),"Decision of 14/10: shared version validated on M and XS",None,None),
