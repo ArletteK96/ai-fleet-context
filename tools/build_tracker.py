@@ -17,8 +17,8 @@ cfill = {"MED":"D6E4EA","Engage":"F4D9BE","RPME":"F8D0D0","Transverse":"D7E8D4"}
 d = lambda j, m: date(2026, m, j)
 D_, IP, NS, BL, AC = "Done", "In progress", "Not started", "Blocked", "To confirm"
 TBN = "To be named"
-DOC = "PRD and technical document: writing, questions asked"
-VAL = "PRD then technical document: validation"
+DOC = "PRD (business document) and technical document: writing, questions asked"
+VAL = "PRD (business document) then technical document: validation"
 cm_val = "Validation of the PRD (business) then the technical document. Ready within one week in total, build and test the following week"
 BC = "Depends on the choice of the new model (T2)"
 J_DOC = "Jordan writes, Arlette in support. 1 day to write and ask the questions (Arlette's value, to confirm with Jordan)"
@@ -53,8 +53,8 @@ rows = [
 ("E1b","Engage","Miss Engage","Kick-off meeting","Matthieu",D_,"",None,d(1,10),"Held on 01/10",None,None),
 ("E2a","Engage","Quiz recap","First assessment: preliminary evaluation with the plugin","Arlette",D_,"E1a",None,d(9,10),"Éric's input received on 09/10. 4 to 6 agents for Engage, level 4. Start with the quiz recap",None,None),
 ("E2b","Engage","Miss Engage","First assessment: preliminary evaluation with the plugin","Arlette",D_,"E1b",None,d(9,10),"Éric's input received on 09/10. 4 to 6 agents for Engage, level 4. Welcome agent: one agent, two contexts",None,None),
-("E4","Engage","Quiz recap","PRD and technical document: writing, questions asked","Arlette",IP,"E2a",None,None,"PRD draft v6 on 26/10 (this document used to be called the validation document)",None,None),
-("E5","Engage","Miss Engage","PRD and technical document: writing, questions asked","Arlette",IP,"E2b",None,None,"PRD draft v3 on 26/10",None,None),
+("E4","Engage","Quiz recap","PRD (business document) and technical document: writing, questions asked","Arlette",IP,"E2a",None,None,"PRD draft v6 on 26/10 (this document used to be called the validation document)",None,None),
+("E5","Engage","Miss Engage","PRD (business document) and technical document: writing, questions asked","Arlette",IP,"E2b",None,None,"PRD draft v3 on 26/10",None,None),
 ("E6","Engage","Quiz recap","Decide: manual or automatic trigger, and who validates before publication","Arlette",NS,"E4",d(30,10),None,"Target: end of the week, to start the build on 03/11. To decide before sending to Vincent",None,None),
 ("E8a","Engage","Quiz recap","Data arrival from Typeform and the platform: Vincent's answer","Vincent",BL,"",d(30,10),None,"Target: end of the week, to start the build on 03/11. To confirm with Vincent. Blocking according to the evaluation of 09/10",None,None),
 ("E8b","Engage","Miss Engage","Can the chat read the participant's progress and the challenge figures: Vincent's answer","Vincent",BL,"",d(30,10),None,"Target: end of the week, to start the build on 03/11. To confirm with Vincent",None,None),
@@ -70,28 +70,28 @@ rows = [
 ("R1","RPME","W1 Transmission plan","Reference material from Jordan","Jordan",IP,"",d(6,11),None,"First draft on 26/10. Date kept by Arlette on 26/10",None,None),
 ("R2","RPME","W1 Transmission plan","Tax expert: identify and contact","Jordan + expert",NS,"",d(23,10),None,"",None,None),
 ("R3","RPME","W1 Transmission plan","Environment set up: mission groups, segments, profile fields","Jordan / Vero",NS,"",d(30,10),None,"Needed by all four workflows",None,None),
-("R4","RPME","W1 Transmission plan","PRD and technical document: writing, questions asked","Jordan",NS,"R1",None,None,"Jordan end to end, Arlette in support. 1 day to write and ask the questions (Arlette's value, to confirm with Jordan)",1,None),
-("R5","RPME","W1 Transmission plan","PRD then technical document: validation",TBN,NS,"R4",None,None,cm_val,4,None),
+("R4","RPME","W1 Transmission plan","PRD (business document) and technical document: writing, questions asked","Jordan",NS,"R1",None,None,"Jordan end to end, Arlette in support. 1 day to write and ask the questions (Arlette's value, to confirm with Jordan)",1,None),
+("R5","RPME","W1 Transmission plan","PRD (business document) then technical document: validation",TBN,NS,"R4",None,None,cm_val,4,None),
 ("R6","RPME","W1 Transmission plan","Build","Jordan",NS,"R5",None,None,BC+". Jordan end to end, Arlette in support. Starting duration to confirm with Jordan",2,1),
 ("R7","RPME","W1 Transmission plan","Test","Jordan",NS,"R6",None,None,"Jordan tests, Arlette in support",3,None),
 ("R8","RPME","W1 Transmission plan","Pilot validation by Matthieu and Jacob","Matthieu / Jacob",NS,"R7",None,None,"Validation delay to be set",None,None),
 ("R9","RPME","RPME","Go-live","RPME team",NS,"",d(30,11),None,"Target: end of November",None,None),
 ("R10","RPME","W3 Valuation","Reference material from Jordan","Jordan",IP,"",d(6,11),None,"First draft on 26/10. Date kept by Arlette on 26/10",None,None),
 ("R11","RPME","W3 Valuation","Valuation expert: identify and contact","Jordan + expert",NS,"",d(23,10),None,"W4 (paid report) also needs the valuation multiples table, which does not exist",None,None),
-("R12","RPME","W3 Valuation","PRD and technical document: writing, questions asked","Jordan",NS,"R10",None,None,"Jordan end to end, Arlette in support. 1 day to write and ask the questions (Arlette's value, to confirm with Jordan)",1,None),
-("R13","RPME","W3 Valuation","PRD then technical document: validation",TBN,NS,"R12",None,None,cm_val,4,None),
+("R12","RPME","W3 Valuation","PRD (business document) and technical document: writing, questions asked","Jordan",NS,"R10",None,None,"Jordan end to end, Arlette in support. 1 day to write and ask the questions (Arlette's value, to confirm with Jordan)",1,None),
+("R13","RPME","W3 Valuation","PRD (business document) then technical document: validation",TBN,NS,"R12",None,None,cm_val,4,None),
 ("R14","RPME","W3 Valuation","Build","Jordan",NS,"R13",None,None,BC+". Jordan end to end, Arlette in support. Starting duration to confirm with Jordan",2,1),
 ("R15","RPME","W3 Valuation","Test","Jordan",NS,"R14",None,None,"Jordan tests, Arlette in support",3,None),
 ("R16","RPME","W3 Valuation","Pilot validation by Matthieu and Jacob","Matthieu / Jacob",NS,"R15",None,None,"Validation delay to be set",None,None),
 ("R18","RPME","W5 Sales file","Gather the existing document templates","Jordan",NS,"",d(16,10),None,"Jordan's date",None,None),
 ("R19","RPME","W5 Sales file","Reference material from Jordan","Jordan",NS,"",None,None,"First draft on 26/10. No date from Jordan. Matthieu must decide the output format (PowerPoint or Word) and the template",None,None),
-("R20","RPME","W5 Sales file","PRD and technical document: writing, questions asked","Arlette",NS,"R8",None,None,"Starts once the two pilots are validated (Jordan's condition). Arlette writes. 1 day to write and ask the questions",1,None),
-("R21","RPME","W5 Sales file","PRD then technical document: validation",TBN,NS,"R20",None,None,cm_val,4,None),
+("R20","RPME","W5 Sales file","PRD (business document) and technical document: writing, questions asked","Arlette",NS,"R8",None,None,"Starts once the two pilots are validated (Jordan's condition). Arlette writes. 1 day to write and ask the questions",1,None),
+("R21","RPME","W5 Sales file","PRD (business document) then technical document: validation",TBN,NS,"R20",None,None,cm_val,4,None),
 ("R22","RPME","W5 Sales file","Build","Arlette",NS,"R21",None,None,BC,2,1),
 ("R23","RPME","W5 Sales file","Test","Arlette",NS,"R22",None,None,"",3,None),
 ("R25","RPME","W7 Handover scenario","Reference material from Jordan","Jordan",NS,"",None,None,"First draft on 26/10. No date from Jordan",None,None),
-("R26","RPME","W7 Handover scenario","PRD and technical document: writing, questions asked","Arlette",NS,"R8",None,None,"Starts once the two pilots are validated (Jordan's condition). Arlette writes. 1 day to write and ask the questions",1,None),
-("R27","RPME","W7 Handover scenario","PRD then technical document: validation",TBN,NS,"R26",None,None,cm_val,4,None),
+("R26","RPME","W7 Handover scenario","PRD (business document) and technical document: writing, questions asked","Arlette",NS,"R8",None,None,"Starts once the two pilots are validated (Jordan's condition). Arlette writes. 1 day to write and ask the questions",1,None),
+("R27","RPME","W7 Handover scenario","PRD (business document) then technical document: validation",TBN,NS,"R26",None,None,cm_val,4,None),
 ("R28","RPME","W7 Handover scenario","Build","Arlette",NS,"R27",None,None,BC,2,1),
 ("R29","RPME","W7 Handover scenario","Test","Arlette",NS,"R28",None,None,"",3,None),
 ]
