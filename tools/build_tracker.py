@@ -59,7 +59,6 @@ rows = [
 ("E4","Engage","Quiz recap","Validation document","Arlette",IP,"E3a",None,None,"Draft v6 on 26/10",None,None),
 ("E5","Engage","Miss Engage","PRD of the welcome agent","Arlette",IP,"E3b",None,None,"Draft v3 on 26/10",None,None),
 ("E6","Engage","Quiz recap","Decide: manual or automatic trigger, and who validates before publication","Arlette",NS,"E4",d(30,10),None,"Target: end of the week, to start the build on 02/11. To decide before sending to Vincent",None,None),
-("E7","Engage","Miss Engage","Personality document: who writes it","Matthieu / Vero",NS,"E5",None,None,"",None,None),
 ("E8a","Engage","Quiz recap","Data arrival from Typeform and the platform: Vincent's answer","Vincent",BL,"",d(30,10),None,"Target: end of the week, to start the build on 02/11. To confirm with Vincent. Blocking according to the evaluation of 09/10",None,None),
 ("E8b","Engage","Miss Engage","Can the chat read the participant's progress and the challenge figures: Vincent's answer","Vincent",BL,"",d(30,10),None,"Target: end of the week, to start the build on 02/11. To confirm with Vincent",None,None),
 ("E9a","Engage","Quiz recap","Respondent and team thresholds, organisation context","Éric",BL,"",None,None,"Values requested on 09/10",None,None),
@@ -109,7 +108,7 @@ rows += [
 ("T2","Transverse","New LLM models","Choice of the new model: success criteria to validate, then shortlist test","Arlette",IP,"",None,None,"Applies to all clients. No run before validation. Waiting on Matthieu: data residency, budget, model route",None,None),
 ("T3","Transverse","Rework of some agents","Target of about 5 agents per workflow, once more powerful models are integrated","Arlette",NS,"T2",None,None,"Direction of 22/10: 23 agents for 2 workflows, not maintainable",None,None),
 ]
-EXTRA = {"E12": ["E8a","E6"], "E15": ["E8b","E7"], "R6": ["R3"], "R14": ["R3"], "R20": ["R16","R19"], "R26": ["R16","R25"]}
+EXTRA = {"E12": ["E8a","E6"], "E15": ["E8b"], "R6": ["R3"], "R14": ["R3"], "R20": ["R16","R19"], "R26": ["R16","R25"]}
 FIRST = 6; LAST = FIRST+len(rows)-1
 projects = []
 for r in rows:
