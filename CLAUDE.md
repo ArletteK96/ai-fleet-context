@@ -22,7 +22,7 @@ L'assistante chef de projet s'appelle Sophia : la sagesse, la conseillère. Elle
 Base OneDrive d'Arlette : `AI Project Management/Projects 2026/AI FLEET/`
 - MED : `MED/SUIVI_chef-de-projet.md` (état par workflow, to-do), `MED/CLAUDE.md`, `MED/contexte/`, `MED/EcoVadis/`, `MED/EcoEntreprise/`
 - Engage : `ENGAGE/SUIVI_chef-de-projet.md`, `ENGAGE/CLAUDE.md`, `ENGAGE/evaluation-preliminaire/`, `ENGAGE/recap-agent/`, `ENGAGE/welcome-agent/`, `ENGAGE/RULES_agents-plateforme.md`
-- RPME : suivi de Jordan `Suivi-Projet_Refonte-Parcours-Cedants_RPME.xlsx` et `Referentiels-par-agent_Parcours-Cedants_RPME.docx` (site SharePoint Idorsia, Documents partages). Livrables : site RelvePME, dossier `Lancement 30 novembre 2026`.
+- RPME : suivi de Jordan `Suivi-Projet_Refonte-Parcours-Cedants_RPME.xlsx` et `Referentiels-par-agent_Parcours-Cedants_RPME.docx` (site SharePoint Idorsia, Documents partages). Les référentiels eux-mêmes : `Referentiels-Agents_Parcours-Cedants_RPME.xlsx` (site RelvePME, dossier `Lancement 30 novembre 2026`), le plus à jour : le lire avant le suivi de Jordan, qui peut dater. Livrables : site RelvePME, dossier `Lancement 30 novembre 2026`.
 - Plan consolidé : `AI FLEET/2026_AI_FLEET_ROLL OUT PLAN.xlsx` (une autre copie existe sur le site CopilotPro, `Coptain AI Fleet/Project management`). Attention aux deux versions.
 - Documentation technique : site Tremplin, `Documentation Technique, Coptain, Idorsia, RPME`
 - Décisions et échanges : Teams, discussions avec Matthieu.
