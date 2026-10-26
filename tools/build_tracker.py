@@ -114,6 +114,9 @@ rows += [
 ("T3","Transverse","Rework of some agents","Target of about 5 agents per workflow, once more powerful models are integrated","Arlette",NS,"T2",None,None,"Direction of 22/10: 23 agents for 2 workflows, not maintainable",None,None),
 ]
 EXTRA = {"E12": ["E8a","E6"], "E15": ["E8b"], "R6": ["R3"], "R14": ["R3"], "R20": ["R16","R19"], "R26": ["R16","R25"]}
+# Lignes supprimées par Arlette dans le fichier en ligne : à ne pas recréer (ajouter les ID ici)
+SKIP_IDS = []
+rows = [r for r in rows if r[0] not in SKIP_IDS]
 FIRST = 6; LAST = FIRST+len(rows)-1
 projects = []
 for r in rows:
