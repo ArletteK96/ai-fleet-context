@@ -42,12 +42,10 @@ rows = [
 ("M11","MED","EcoVadis","Validate the workflow","Arlette / Matthieu / Vero",D_,"M10",None,d(14,10),"Decision of 14/10: shared version validated on M and XS",None,None),
 ("M12","MED","EcoVadis","Share V1 Beta","Arlette",D_,"M11",None,d(16,10),"Shared with the team for testing on staging",None,None),
 ("M13","MED","EcoVadis","V1 Beta feedback","Isabelle",D_,"M12",None,d(21,10),"Feedback of 21/10 did not help progress: rules and outputs were too limited. Matthieu asked Isabelle for more feedback the same day",None,None),
-("M13b","MED","EcoVadis","Validation of the report mock-up and the question 'should an objective change the plan?'","Isabelle",NS,"M13",None,None,"Pending according to the MED tracker",None,None),
 ("M13c","MED","EcoVadis","Rework after the feedback: extend the rules and outputs","Arlette",AC,"M13",None,None,"Linked to the new LLM models (T2) and to the PRD and technical document method",None,None),
 ("M14","MED","EcoEntreprise","Agents reader, impact-analyst, classifier and gap-analyst validated","Arlette",D_,"",None,None,"Source: MED tracker",None,None),
 ("M15","MED","EcoEntreprise","Task-planner: v16 chain tested","Arlette",D_,"M14",None,d(21,10),"4 runs, 3 clean",None,None),
-("M16","MED","EcoEntreprise","Writer: stabilise part 1","Arlette",IP,"M15",None,None,"Writer v1 tested on 21/10",None,None),
-("M17","MED","EcoEntreprise","Connection to MED Missions","Arlette",NS,"M16",None,None,"",None,None),
+("M16","MED","EcoEntreprise","Writer: stabilise part 1","Arlette",IP,"M15",None,None,"Writer v1 tested on 21/10. The connection to MED Missions is part of the build",None,None),
 ("M18","MED","Self-assessment","Waiting for feedback from the MED side","Isabelle",NS,"",None,None,"The MED tracker says 'waiting for Gaëlle'. Isabelle is the MED referent",None,None),
 ("E1a","Engage","Quiz recap","Kick-off meeting","Matthieu",D_,"",None,d(1,10),"Held on 01/10",None,None),
 ("E1b","Engage","Miss Engage","Kick-off meeting","Matthieu",D_,"",None,d(1,10),"Held on 01/10",None,None),
@@ -117,7 +115,7 @@ nt["A4"] = "First Monday of the timeline"; nt["B4"] = d(7,9)
 for r in (3,4): nt[f"A{r}"].font = font(); nt[f"B{r}"].number_format = "dd/mm/yyyy"; nt[f"B{r}"].font = font(color="0000FF", bold=True); nt[f"B{r}"].fill = YEL
 REF = "Notes!$B$3"
 notes = [
-"Done lines are hidden in the Planning: click the + in the left margin to show them. The ID, After and Also after columns are hidden because they only feed the dates: unhide them to see the dependencies.",
+"The ID, After and Also after columns are hidden because they only feed the dates: unhide them to see the dependencies.",
 "One document: the Summary tab is calculated from the Planning tab. Edit the Planning only. If you add a project name in the Planning, add a row for it in the Summary.",
 "Dates come from the project members: Arlette's original plan, Jordan's tracker (RPME), the MED and Engage trackers, test series. A missing date stays an empty (yellow) cell.",
 "Durations are Arlette's starting values of 26/10: 2 working days of build, 3 working days of test. The PRD and technical document step takes 1 day of writing plus 4 days of validation, so it is ready within one week. Build and test follow the week after. Blue duration cells can be edited. The Agents column shows the planned number of agents (5 maximum per workflow) and does not drive any calculation.",
@@ -198,8 +196,6 @@ for i, r in enumerate(rows):
         c = pl.cell(row=n, column=col, value=f'=IF(OR($L{n}="",$O{n}=""),"",IF(AND($L{n}<={cl_}$4+6,$O{n}>={cl_}$4),1,""))')
         c.number_format = ";;;"
     pl.row_dimensions[n].height = 30
-    if st == D_:
-        pl.row_dimensions[n].outlineLevel = 1; pl.row_dimensions[n].hidden = True
 dv = DataValidation(type="list", formula1='"Not started,In progress,Done,Blocked,To confirm"', allow_blank=True)
 pl.add_data_validation(dv); dv.add(f"F{FIRST}:F{LAST}")
 rg = f"{L(W0)}{FIRST}:{L(W0+NW-1)}{LAST}"; tl = f"{L(W0)}{FIRST}"; hd = f"{L(W0)}$4"
@@ -217,7 +213,6 @@ pl.conditional_formatting.add(f"F{FIRST}:F{LAST}", FormulaRule(formula=[f'OR($F{
 pl.column_dimensions["O"].hidden = True; pl.column_dimensions["Q"].hidden = True
 pl.row_dimensions[4].hidden = True
 for col_ in "AGHI": pl.column_dimensions[col_].hidden = True
-pl.sheet_properties.outlinePr = Outline(summaryBelow=False)
 pl.freeze_panes = "E6"; pl.auto_filter.ref = f"A5:R{LAST}"
 pl.page_setup.orientation = "landscape"; pl.page_setup.fitToWidth = 1; pl.page_setup.fitToHeight = 0
 
