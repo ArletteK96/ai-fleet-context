@@ -41,7 +41,7 @@ Base OneDrive d'Arlette : `AI Project Management/Projects 2026/AI FLEET/`
 - `ArletteK96/coptain-ai-automation` (privé) : sujets internes d'Arlette pour améliorer sa façon de travailler. Ce n'est pas un projet client : ne pas le mélanger avec les suivis AI Fleet. Contenu non relu à ce jour, à attacher à la session pour l'utiliser.
 
 ## Personnes (rôles d'après les suivis, à corriger)
-Matthieu Salvy (décisions, validations), Véro / Verónica Barcia (plateforme, back office), Vincent (technique plateforme), Éric (contexte d'organisation), Jordan Arnodo (RPME, fournit les référentiels), Isabelle (référente MED, c'est elle la responsable côté MED). Gaëlle n'est responsable de rien : ne pas lui attribuer de lignes.
+Matthieu Salvy (décisions, validations), Véro / Verónica Barcia (plateforme, back office), Vincent (technique plateforme), Éric (contexte d'organisation), Jordan Arnodo (RPME, fournit les référentiels), Isabelle (référente MED, c'est elle la responsable côté MED). Gaëlle n'est responsable de rien : ne pas lui attribuer de lignes. Coptain Transition est l'environnement de production de MED.
 
 ## À faire en fin de session
 Mettre à jour le suivi du projet concerné et la date en tête de ce fichier si l'index a changé.

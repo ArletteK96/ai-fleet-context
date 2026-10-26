@@ -32,7 +32,7 @@ FIRSTSHARE = "First share with the team on 27/10 (Arlette). "
 rows = [
 ("M1","MED","MED global","Scoping","Arlette / Matthieu / Vero",D_,"",d(8,9),d(8,9),"",None,None),
 ("M2","MED","EcoVadis","First assessment: Audit Workflow User Experience document","Arlette",D_,"M1",d(17,9),d(18,9),"Blocked for a while by missing information on the MED side",None,None),
-("M3","MED","MCP data","First assessment: MCP connected and shared","Vero",D_,"M1",None,d(8,10),"MCP available in production for Coptain Transition on 08/10 (Vero), connectors shared on 09/10. Registrations and active learners only give all-time and last-30-days figures: monthly and weekly pending development (21/10)",None,None),
+("M3","MED","MCP data","First assessment: MCP connected and shared","Vero",D_,"M1",None,d(8,10),"MCP available in production for Coptain Transition (MED) on 08/10 (Vero), connectors shared on 09/10. Registrations and active learners only give all-time and last-30-days figures: monthly and weekly pending development (21/10)",None,None),
 ("M4","MED","EcoVadis","Share findings and present the reference document","Arlette / Matthieu / Vero",D_,"M2",d(24,9),d(24,9),"",None,None),
 ("M5","MED","EcoVadis","Final version and validation of the reference document","Arlette",D_,"M4",d(25,9),d(12,10),"Last version shared on 02/10 with Gaëlle and Isabelle, feedback on 12/10, update of the rules requested",None,None),
 ("M6","MED","MED global","MED global context","Isabelle",D_,"M4",d(28,9),None,"Finalised (Arlette, 26/10). Owner changed from 'MED crew' to Isabelle, MED referent: to confirm",None,None),
