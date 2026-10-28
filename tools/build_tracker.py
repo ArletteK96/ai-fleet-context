@@ -42,7 +42,7 @@ rows = [
 ("M11","MED","EcoVadis","Validate the workflow","Arlette / Matthieu / Vero",D_,"M10",None,d(14,10),"Decision of 14/10: shared version validated on M and XS",None,None),
 ("M12","MED","EcoVadis","Share V1 Beta","Arlette",D_,"M11",None,d(16,10),"Shared with the team for testing on staging",None,None),
 ("M13","MED","EcoVadis","V1 Beta feedback","Isabelle",D_,"M12",None,d(21,10),"Feedback of 21/10 did not help progress: rules and outputs were too limited. Matthieu asked Isabelle for more feedback the same day",None,None),
-("M13c","MED","EcoVadis","Total rework after the feedback of 21/10","Arlette",IP,"M13",None,None,"Total rework requested. Linked to the new LLM models (T2) and to the PRD and technical document method",None,None),
+("M13c","MED","EcoVadis","Rework: total, after the feedback of 21/10","Arlette",IP,"M13",None,None,"Total rework requested. Linked to the new LLM models (T2) and to the PRD and technical document method",None,None),
 ("M13e","MED","EcoVadis","Retest","Arlette",NS,"M13c",None,None,"Test before deployment",None,None),
 ("M13d","MED","EcoVadis","Deployment","To be named",NS,"M13e",None,None,"Staging to production",None,None),
 ("M13g","MED","EcoEntreprise","PRD (business document) and technical document","Arlette",D_,"",None,None,"Confirmed by Arlette on 28/10",None,None),
