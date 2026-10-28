@@ -225,7 +225,7 @@ for i, r in enumerate(rows):
         c = pl.cell(row=n, column=col, value=f'=IF(OR($L{n}="",$O{n}=""),"",IF(AND($L{n}<={cl_}$4+6,$O{n}>={cl_}$4),1,""))')
         c.number_format = ";;;"
     pl.row_dimensions[n].height = 30
-dv = DataValidation(type="list", formula1='"Not started,In progress,Done,Blocked,To confirm"', allow_blank=True)
+dv = DataValidation(type="list", formula1='"Not started,In progress,On hold,Done,Blocked,To confirm"', allow_blank=True)
 pl.add_data_validation(dv); dv.add(f"F{FIRST}:F{LAST}")
 rg = f"{L(W0)}{FIRST}:{L(W0+NW-1)}{LAST}"; tl = f"{L(W0)}{FIRST}"; hd = f"{L(W0)}$4"
 pl.conditional_formatting.add(rg, FormulaRule(formula=[f'AND({tl}=1,$F{FIRST}="Done")'], fill=fill("A9D18E"), stopIfTrue=True))
@@ -239,6 +239,7 @@ pl.conditional_formatting.add(f"P{FIRST}:P{LAST}", FormulaRule(formula=[f'AND(IS
 pl.conditional_formatting.add(f"F{FIRST}:F{LAST}", FormulaRule(formula=[f'$F{FIRST}="Done"'], fill=fill("C6EFCE")))
 pl.conditional_formatting.add(f"F{FIRST}:F{LAST}", FormulaRule(formula=[f'$F{FIRST}="In progress"'], fill=fill("DDEBF7")))
 pl.conditional_formatting.add(f"F{FIRST}:F{LAST}", FormulaRule(formula=[f'OR($F{FIRST}="Blocked",$F{FIRST}="To confirm")'], fill=fill("FCE4D6")))
+pl.conditional_formatting.add(f"F{FIRST}:F{LAST}", FormulaRule(formula=[f'$F{FIRST}="On hold"'], fill=fill("E4DFEC")))
 pl.column_dimensions["O"].hidden = True; pl.column_dimensions["Q"].hidden = True
 pl.row_dimensions[4].hidden = True
 for col_ in "AGHIS": pl.column_dimensions[col_].hidden = True
@@ -318,14 +319,14 @@ for i, (cl, pj, key) in enumerate(OV_PROJECTS):
         who = f"$J{n}" if stg == "Kick-off" else f"$B{n}"
         cnt = f'COUNTIFS({PCo},{who},{PSg},"{stg}")'
         def k(v): return f'COUNTIFS({PCo},{who},{PSg},"{stg}",{PSt},"{v}")'
-        ov.cell(row=n, column=j, value=(f'=IF({cnt}=0,"—",IF({k("Blocked")}>0,"Blocked",IF({k("Done")}={cnt},"Done",'
-                                      f'IF({k("Done")}+{k("In progress")}>0,"In progress",IF({k("To confirm")}>0,"To confirm","Not started")))))'))
+        ov.cell(row=n, column=j, value=(f'=IF({cnt}=0,"—",IF({k("Blocked")}>0,"Blocked",IF({k("On hold")}>0,"On hold",IF({k("Done")}={cnt},"Done",'
+                                      f'IF({k("Done")}+{k("In progress")}>0,"In progress",IF({k("To confirm")}>0,"To confirm","Not started"))))))'))
     for j in range(1, 10):
         c = ov.cell(row=n, column=j); c.font = font(); c.border = box
         c.alignment = Alignment(horizontal="center" if j > 2 else "left", vertical="center")
     ov.row_dimensions[n].height = 26
 OVL = 4 + len(OV_PROJECTS)
-for val, bg, fc in [("Done","C6EFCE","006100"),("In progress","BDD7EE","1F4E79"),("Blocked","F4B183","833C0B"),("To confirm","FFF2CC","7F6000")]:
+for val, bg, fc in [("Done","C6EFCE","006100"),("In progress","BDD7EE","1F4E79"),("Blocked","F4B183","833C0B"),("To confirm","FFF2CC","7F6000"),("On hold","E4DFEC","5B3F8C")]:
     ov.conditional_formatting.add(f"C5:I{OVL}", FormulaRule(formula=[f'C5="{val}"'], fill=fill(bg), font=Font(name=F, bold=True, color=fc)))
 ov.conditional_formatting.add(f"C5:I{OVL}", FormulaRule(formula=['C5="Not started"'], fill=fill("F2F2F2"), font=Font(name=F, color="7F7F7F")))
 ov.conditional_formatting.add(f"C5:I{OVL}", FormulaRule(formula=['C5="—"'], font=Font(name=F, color="BFBFBF")))

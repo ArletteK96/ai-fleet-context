@@ -38,7 +38,7 @@ Base OneDrive d'Arlette : `AI Project Management/Projects 2026/AI FLEET/`
 - Documentation technique : site Tremplin, `Documentation Technique, Coptain, Idorsia, RPME`
 - Décisions et échanges : Teams, discussions avec Matthieu.
 
-MED, proposition d'Arlette à discuter en équipe le 29/10 (pas encore décidée) : traiter un workflow à la fois, EcoVadis d'abord (le retour du 21/10 demande un rework total), puis rejouer le même processus sur EcoEntreprise et Self-assessment après avoir tiré les leçons. Tant que l'équipe n'a pas décidé, ne pas afficher de statut « On hold » ni présenter cette pause comme actée : EcoEntreprise et Self-assessment restent « In progress ». Ne jamais choisir à la place de l'équipe.
+MED, proposition d'Arlette à discuter en équipe le 29/10 (pas encore décidée) : traiter un workflow à la fois, EcoVadis d'abord (le retour du 21/10 demande un rework total), puis rejouer le même processus sur EcoEntreprise et Self-assessment après avoir tiré les leçons. Tant que l'équipe n'a pas décidé, ne pas afficher de statut « On hold » ni présenter cette pause comme actée : EcoEntreprise et Self-assessment restent « In progress ». Ne jamais choisir à la place de l'équipe. Le statut « On hold » existe dans les listes et les couleurs du tableau, mais il n'est appliqué à aucune ligne tant qu'Arlette ne l'a pas décidé avec l'équipe ; « To confirm » n'est pas « On hold ».
 
 ## Les trois chantiers (état au 26/10, à vérifier dans les suivis)
 - MED : workflows EcoVadis (validé sur M et XS), EcoEntreprise (en cours), auto-évaluation (retour attendu côté MED). La référente MED est Isabelle.
