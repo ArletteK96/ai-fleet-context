@@ -170,11 +170,15 @@ for i,(h,w) in enumerate(zip(heads,widths), start=1):
     c.alignment = Alignment(wrap_text=True, vertical="center", horizontal="center" if i in centred else "left"); pl.column_dimensions[L(i)].width = w
 pl.row_dimensions[5].height = 38
 A_, M_, N_, O_ = (f"${x}${FIRST}:${x}${LAST}" for x in "AMNO")
+MONTHS = '"Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"'
+def month_label(cl, drow, k, prev):
+    m = f'CHOOSE(MONTH({cl}{drow}),{MONTHS})'
+    return f'={m}' if k == 0 else f'=IF(MONTH({cl}{drow})<>MONTH({prev}{drow}),{m},"")'
 NW = 16; W0 = 19
 for k in range(NW):
     col = W0+k
     pl.cell(row=4, column=col, value="=Notes!$B$4" if k == 0 else f"={L(col-1)}4+7").number_format = "dd/mm"
-    c = pl.cell(row=5, column=col, value=f'="W"&WEEKNUM({L(col)}4,21)')
+    c = pl.cell(row=5, column=col, value=month_label(L(col), 4, k, L(col-1)))
     c.font = font(bold=True,color="FFFFFF",size=8); c.fill = HEAD
     c.alignment = Alignment(horizontal="center", vertical="center", text_rotation=90); pl.column_dimensions[L(col)].width = 4.4
 for i, r in enumerate(rows):
@@ -248,7 +252,7 @@ SW0 = 12
 for k in range(NW):
     col = SW0+k
     sm.cell(row=3, column=col, value="=Notes!$B$4" if k == 0 else f"={L(col-1)}3+7").number_format = "dd/mm"
-    c = sm.cell(row=4, column=col, value=f'="W"&WEEKNUM({L(col)}3,21)')
+    c = sm.cell(row=4, column=col, value=month_label(L(col), 3, k, L(col-1)))
     c.font = font(bold=True,color="FFFFFF",size=8); c.fill = HEAD
     c.alignment = Alignment(horizontal="center", vertical="center", text_rotation=90); sm.column_dimensions[L(col)].width = 4.4
 PC, PF, PL, PO, PQ = (f"Planning!${x}${FIRST}:${x}${LAST}" for x in "CFLOQ")
