@@ -42,13 +42,15 @@ rows = [
 ("M11","MED","EcoVadis","Validate the workflow","Arlette / Matthieu / Vero",D_,"M10",None,d(14,10),"Decision of 14/10: shared version validated on M and XS",None,None),
 ("M12","MED","EcoVadis","Share V1 Beta","Arlette",D_,"M11",None,d(16,10),"Shared with the team for testing on staging",None,None),
 ("M13","MED","EcoVadis","V1 Beta feedback","Isabelle",D_,"M12",None,d(21,10),"Feedback of 21/10 did not help progress: rules and outputs were too limited. Matthieu asked Isabelle for more feedback the same day",None,None),
-("M13c","MED","EcoVadis","Rework after the feedback: extend the rules and outputs","Arlette",AC,"M13",None,None,"Linked to the new LLM models (T2) and to the PRD and technical document method",None,None),
-("M13d","MED","EcoVadis","Go-live (production)","To be named",NS,"M13c",None,None,"Staging to production",None,None),
+("M13c","MED","EcoVadis","Rework after the feedback: extend the rules and outputs","Arlette",IP,"M13",None,None,"Linked to the new LLM models (T2) and to the PRD and technical document method",None,None),
+("M13e","MED","EcoVadis","Retest","Arlette",NS,"M13c",None,None,"Test before deployment",None,None),
+("M13d","MED","EcoVadis","Deployment","To be named",NS,"M13e",None,None,"Staging to production",None,None),
+("M13g","MED","EcoEntreprise","PRD (business document) and technical document","Arlette",D_,"",None,None,"Confirmed by Arlette on 28/10",None,None),
 ("M14","MED","EcoEntreprise","Agents reader, impact-analyst, classifier and gap-analyst validated","Arlette",D_,"",None,None,"Source: MED tracker",None,None),
 ("M15","MED","EcoEntreprise","Task-planner: v16 chain tested","Arlette",D_,"M14",None,d(21,10),"4 runs, 3 clean",None,None),
 ("M16","MED","EcoEntreprise","Writer: stabilise part 1","Arlette",IP,"M15",None,None,"Writer v1 tested on 21/10. The connection to MED Missions is part of the build",None,None),
-("M16a","MED","EcoEntreprise","Rework and retest","Arlette",NS,"M16",None,None,"One line for the first round: add another line if a second round is needed",None,None),
-("M16b","MED","EcoEntreprise","Go-live (production)","To be named",NS,"M16a",None,None,"Staging to production",None,None),
+("M16c","MED","EcoEntreprise","Test: internal, then client","Arlette",NS,"M16",None,None,"",3,None),
+("M16b","MED","EcoEntreprise","Deployment","To be named",NS,"M16c",None,None,"Staging to production",None,None),
 ("M18","MED","Self-assessment","Waiting for feedback from the MED side","Isabelle",NS,"",None,None,"The MED tracker says 'waiting for Gaëlle'. Isabelle is the MED referent",None,None),
 ("E1a","Engage","Quiz recap","Kick-off meeting","Matthieu",D_,"",None,d(1,10),"Held on 01/10",None,None),
 ("E1b","Engage","Miss Engage","Kick-off meeting","Matthieu",D_,"",None,d(1,10),"Held on 01/10",None,None),
@@ -64,13 +66,11 @@ rows = [
 ("E11","Engage","Quiz recap",VAL,TBN,NS,"",d(27,10),None,FIRSTSHARE+cm_val,4,None),
 ("E12","Engage","Quiz recap","Build","Arlette",NS,"E11",d(3,11),None,BC+". Not before 03/11, one week after the documents are shared (Arlette)",2,1),
 ("E13","Engage","Quiz recap","Test: internal, then client","Arlette",NS,"E12",None,None,"",3,None),
-("E13a","Engage","Quiz recap","Rework and retest","Arlette",NS,"E13",None,None,"One line for the first round: add another line if a second round is needed",None,None),
-("E13b","Engage","Quiz recap","Go-live (production)","To be named",NS,"E13a",None,None,"Staging to production",None,None),
+("E13b","Engage","Quiz recap","Deployment","To be named",NS,"E13",None,None,"Staging to production",None,None),
 ("E14","Engage","Miss Engage",VAL,TBN,NS,"",d(27,10),None,FIRSTSHARE+cm_val,4,None),
 ("E15","Engage","Miss Engage","Build","Arlette",NS,"E14",d(3,11),None,BC+". Not before 03/11, one week after the documents are shared (Arlette)",2,1),
 ("E16","Engage","Miss Engage","Test: internal, then client","Arlette",NS,"E15",None,None,"",3,None),
-("E16a","Engage","Miss Engage","Rework and retest","Arlette",NS,"E16",None,None,"One line for the first round: add another line if a second round is needed",None,None),
-("E16b","Engage","Miss Engage","Go-live (production)","To be named",NS,"E16a",None,None,"Staging to production",None,None),
+("E16b","Engage","Miss Engage","Deployment","To be named",NS,"E16",None,None,"Staging to production",None,None),
 ("R0","RPME","RPME","Kick-off with Arlette and Matthieu","Jordan",D_,"",d(16,10),d(16,10),"Kick-off for the whole RPME project",None,None),
 ("R1","RPME","W1 Transmission plan","Reference material from Jordan","Jordan",IP,"",d(6,11),None,"First draft on 26/10. Date kept by Arlette on 26/10",None,None),
 ("R2","RPME","W1 Transmission plan","Tax expert: identify and contact","Jordan + expert",NS,"",d(23,10),None,"",None,None),
@@ -80,8 +80,7 @@ rows = [
 ("R6","RPME","W1 Transmission plan","Build","Jordan",NS,"R5",None,None,BC+". Jordan end to end, Arlette in support. Starting duration to confirm with Jordan",2,1),
 ("R7","RPME","W1 Transmission plan","Test","Jordan",NS,"R6",None,None,"Jordan tests, Arlette in support",3,None),
 ("R8","RPME","W1 Transmission plan","Pilot validation by Matthieu and Jacob","Matthieu / Jacob",NS,"R7",None,None,"Validation delay to be set",None,None),
-("R8a","RPME","W1 Transmission plan","Rework and retest","Jordan",NS,"R8",None,None,"One line for the first round: add another line if a second round is needed",None,None),
-("R8b","RPME","W1 Transmission plan","Go-live (production)","To be named",NS,"R8a",None,None,"Staging to production",None,None),
+("R8b","RPME","W1 Transmission plan","Deployment","To be named",NS,"R8",None,None,"Staging to production",None,None),
 ("R9","RPME","RPME","RPME launch","RPME team",NS,"",d(30,11),None,"Target: end of November",None,None),
 ("R10","RPME","W3 Valuation","Reference material from Jordan","Jordan",IP,"",d(6,11),None,"First draft on 26/10. Date kept by Arlette on 26/10",None,None),
 ("R11","RPME","W3 Valuation","Valuation expert: identify and contact","Jordan + expert",NS,"",d(23,10),None,"W4 (paid report) also needs the valuation multiples table, which does not exist",None,None),
@@ -90,23 +89,20 @@ rows = [
 ("R14","RPME","W3 Valuation","Build","Jordan",NS,"R13",None,None,BC+". Jordan end to end, Arlette in support. Starting duration to confirm with Jordan",2,1),
 ("R15","RPME","W3 Valuation","Test","Jordan",NS,"R14",None,None,"Jordan tests, Arlette in support",3,None),
 ("R16","RPME","W3 Valuation","Pilot validation by Matthieu and Jacob","Matthieu / Jacob",NS,"R15",None,None,"Validation delay to be set",None,None),
-("R16a","RPME","W3 Valuation","Rework and retest","Jordan",NS,"R16",None,None,"One line for the first round: add another line if a second round is needed",None,None),
-("R16b","RPME","W3 Valuation","Go-live (production)","To be named",NS,"R16a",None,None,"Staging to production",None,None),
+("R16b","RPME","W3 Valuation","Deployment","To be named",NS,"R16",None,None,"Staging to production",None,None),
 ("R18","RPME","W5 Sales file","Gather the existing document templates","Jordan",NS,"",d(16,10),None,"Jordan's date",None,None),
-("R19","RPME","W5 Sales file","Reference material from Jordan","Jordan",NS,"",None,None,"First draft on 26/10. No date from Jordan. Matthieu must decide the output format (PowerPoint or Word) and the template",None,None),
+("R19","RPME","W5 Sales file","Reference material from Jordan","Jordan",IP,"",None,None,"Jordan is working on it, not shared yet (Arlette, 28/10). First draft on 26/10. No date from Jordan. Matthieu must decide the output format (PowerPoint or Word) and the template",None,None),
 ("R20","RPME","W5 Sales file","PRD (business document) and technical document: writing, questions asked","Arlette",NS,"R8",None,None,"Starts once the two pilots are validated (Jordan's condition). Arlette writes. 1 day to write and ask the questions",1,None),
 ("R21","RPME","W5 Sales file","PRD (business document) then technical document: validation",TBN,NS,"R20",None,None,cm_val,4,None),
 ("R22","RPME","W5 Sales file","Build","Arlette",NS,"R21",None,None,BC,2,1),
 ("R23","RPME","W5 Sales file","Test: internal, then client","Arlette",NS,"R22",None,None,"",3,None),
-("R23a","RPME","W5 Sales file","Rework and retest","Arlette",NS,"R23",None,None,"One line for the first round: add another line if a second round is needed",None,None),
-("R23b","RPME","W5 Sales file","Go-live (production)","To be named",NS,"R23a",None,None,"Staging to production",None,None),
-("R25","RPME","W7 Handover scenario","Reference material from Jordan","Jordan",NS,"",None,None,"First draft on 26/10. No date from Jordan",None,None),
+("R23b","RPME","W5 Sales file","Deployment","To be named",NS,"R23",None,None,"Staging to production",None,None),
+("R25","RPME","W7 Handover scenario","Reference material from Jordan","Jordan",IP,"",None,None,"Jordan is working on it, not shared yet (Arlette, 28/10). First draft on 26/10. No date from Jordan",None,None),
 ("R26","RPME","W7 Handover scenario","PRD (business document) and technical document: writing, questions asked","Arlette",NS,"R8",None,None,"Starts once the two pilots are validated (Jordan's condition). Arlette writes. 1 day to write and ask the questions",1,None),
 ("R27","RPME","W7 Handover scenario","PRD (business document) then technical document: validation",TBN,NS,"R26",None,None,cm_val,4,None),
 ("R28","RPME","W7 Handover scenario","Build","Arlette",NS,"R27",None,None,BC,2,1),
 ("R29","RPME","W7 Handover scenario","Test: internal, then client","Arlette",NS,"R28",None,None,"",3,None),
-("R29a","RPME","W7 Handover scenario","Rework and retest","Arlette",NS,"R29",None,None,"One line for the first round: add another line if a second round is needed",None,None),
-("R29b","RPME","W7 Handover scenario","Go-live (production)","To be named",NS,"R29a",None,None,"Staging to production",None,None),
+("R29b","RPME","W7 Handover scenario","Deployment","To be named",NS,"R29",None,None,"Staging to production",None,None),
 ]
 rows += [
 ("T1","Transverse","Agent builder plugin","Update the plugin","Arlette",D_,"",d(18,9),d(18,9),"",None,None),
@@ -134,7 +130,8 @@ for r in (3,4): nt[f"A{r}"].font = font(); nt[f"B{r}"].number_format = "dd/mm/yy
 REF = "Notes!$B$3"
 notes = [
 "The ID, After and Also after columns are hidden because they only feed the dates: unhide them to see the dependencies.",
-"One document: the Summary tab is calculated from the Planning tab. Edit the Planning only. If you add a project name in the Planning, add a row for it in the Summary.",
+"One document: the Overview tab is calculated from the Planning tab. Edit the Planning only. If you add a new project name in the Planning, add a row for it in the Overview (and give each step its stage in the hidden Stage column).",
+"Stages of a project: Kick-off, Discovery (scoping, PRD and technical document), Build, Test (internal then client), Rework, Retest, Deployment. Rework and Retest only appear once a test has failed. Maintenance is not tracked here: it is in the registry.",
 "Dates come from the project members: Arlette's original plan, Jordan's tracker (RPME), the MED and Engage trackers, test series. A missing date stays an empty (yellow) cell.",
 "Durations are Arlette's starting values of 26/10: 2 working days of build, 3 working days of test. The PRD and technical document step takes 1 day of writing plus 4 days of validation, so it is ready within one week. Build and test follow the week after. Blue duration cells can be edited. The Agents column shows the planned number of agents (5 maximum per workflow) and does not drive any calculation.",
 "Start (calc.): next working day after the end of the 'After' and 'Also after' lines for lines with a duration; otherwise the end of the 'After' line, or the due date. If one of these lines has no date, the line has no date. Public holidays are not taken into account.",
@@ -162,8 +159,8 @@ nt.column_dimensions["A"].width = 130; nt.column_dimensions["B"].width = 14
 pl["A1"] = "2026 AI Fleet: planning"; pl["A1"].font = font(bold=True, size=14)
 pl["A2"] = "Reference date:"; pl["A2"].font = font(italic=True)
 pl["D2"] = f"={REF}"; pl["D2"].number_format = "dd/mm/yyyy"; pl["D2"].font = font(italic=True)
-heads = ["ID","Client","Project","Step","Owner","Status","After","Also after","Also after","Duration (working days)","Agents","Start (calc.)","Due date","Actual end","Effective end (calc.)","Overdue (days)","Open overdue (calc.)","Comments"]
-widths = [5,10,26,46,15,11,7,7,7,9,7,11,11,11,11,8,8,52]
+heads = ["ID","Client","Project","Step","Owner","Status","After","Also after","Also after","Duration (working days)","Agents","Start (calc.)","Due date","Actual end","Effective end (calc.)","Overdue (days)","Open overdue (calc.)","Comments","Stage"]
+widths = [5,10,26,46,15,11,7,7,7,9,7,11,11,11,11,8,8,52,9]
 centred = (7,8,9,10,11,12,13,14,15,16,17)
 for i,(h,w) in enumerate(zip(heads,widths), start=1):
     c = pl.cell(row=5, column=i, value=h); c.font = font(bold=True,color="FFFFFF"); c.fill = HEAD
@@ -174,7 +171,17 @@ MONTHS = '"Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec
 def month_label(cl, drow, k, prev):
     m = f'CHOOSE(MONTH({cl}{drow}),{MONTHS})'
     return f'={m}' if k == 0 else f'=IF(MONTH({cl}{drow})<>MONTH({prev}{drow}),{m},"")'
-NW = 16; W0 = 19
+def stage_of(step):
+    t = str(step)
+    if "Kick-off" in t or t == "Scoping": return "Kick-off"
+    if t.startswith("Rework"): return "Rework"
+    if t.startswith("Retest"): return "Retest"
+    if t.startswith("Deployment"): return "Deployment"
+    if "PRD" in t or t.startswith(("First assessment","Share findings","Final version","Build the agent-specific","Reference material","Environment","Gather","Tax expert","Valuation expert")) or "Waiting for feedback" in t: return "Discovery"
+    if t.startswith(("Test","Validate the workflow","Share V1","V1 Beta","Pilot validation")): return "Test"
+    if t.startswith(("Build","Agents reader","Task-planner","Writer")): return "Build"
+    return None
+NW = 16; W0 = 20
 for k in range(NW):
     col = W0+k
     pl.cell(row=4, column=col, value="=Notes!$B$4" if k == 0 else f"={L(col-1)}4+7").number_format = "dd/mm"
@@ -187,7 +194,7 @@ for i, r in enumerate(rows):
     for j,v in zip(range(1,8),(id_,cl,pj,et,ow,st,af or None)): pl.cell(row=n, column=j, value=v)
     for k, x in enumerate(EXTRA.get(id_, [])): pl.cell(row=n, column=8+k, value=x)
     pl.cell(row=n, column=10, value=du); pl.cell(row=n, column=11, value=ag)
-    pl.cell(row=n, column=14, value=done); pl.cell(row=n, column=18, value=co or None)
+    pl.cell(row=n, column=14, value=done); pl.cell(row=n, column=18, value=co or None); pl.cell(row=n, column=19, value=stage_of(et))
     pred = f'MATCH(G{n},{A_},0)'
     if du is not None:
         def pv(c): return f'IF({c}{n}="",0,IFERROR(INDEX({O_},MATCH({c}{n},{A_},0)),""))'
@@ -234,8 +241,8 @@ pl.conditional_formatting.add(f"F{FIRST}:F{LAST}", FormulaRule(formula=[f'$F{FIR
 pl.conditional_formatting.add(f"F{FIRST}:F{LAST}", FormulaRule(formula=[f'OR($F{FIRST}="Blocked",$F{FIRST}="To confirm")'], fill=fill("FCE4D6")))
 pl.column_dimensions["O"].hidden = True; pl.column_dimensions["Q"].hidden = True
 pl.row_dimensions[4].hidden = True
-for col_ in "AGHI": pl.column_dimensions[col_].hidden = True
-pl.freeze_panes = "E6"; pl.auto_filter.ref = f"A5:R{LAST}"
+for col_ in "AGHIS": pl.column_dimensions[col_].hidden = True
+pl.freeze_panes = "E6"; pl.auto_filter.ref = f"A5:S{LAST}"
 pl.page_setup.orientation = "landscape"; pl.page_setup.fitToWidth = 1; pl.page_setup.fitToHeight = 0
 
 # ---------- Summary (calculé depuis Planning) ----------
@@ -291,4 +298,39 @@ sm.conditional_formatting.add(f"{L(SW0)}4:{L(SW0+NW-1)}4", FormulaRule(formula=[
 sm.freeze_panes = "C5"
 sm.row_dimensions[3].hidden = True
 sm.page_setup.orientation = "landscape"; sm.page_setup.fitToWidth = 1; sm.page_setup.fitToHeight = 0
+
+# ---------- Overview (une ligne par projet, une colonne par étape, calculée depuis Planning) ----------
+ov = wb.create_sheet("Overview", 0); ov.sheet_properties.pageSetUpPr = PageSetupProperties(fitToPage=True)
+ov["A1"] = "2026 AI Fleet: overview by project"; ov["A1"].font = font(bold=True, size=14)
+ov["A2"] = "Status of each project at each stage, calculated from the Planning tab. Rework and Retest only appear once a test has failed."; ov["A2"].font = font(italic=True, size=9)
+OV_STAGES = ["Kick-off","Discovery","Build","Test","Rework","Retest","Deployment"]
+OV_PROJECTS = [("MED","EcoVadis","MED global"),("MED","EcoEntreprise","MED global"),("MED","Self-assessment","MED global"),
+               ("Engage","Quiz recap","Quiz recap"),("Engage","Miss Engage","Miss Engage"),
+               ("RPME","W1 Transmission plan","RPME"),("RPME","W3 Valuation","RPME"),("RPME","W5 Sales file","RPME"),("RPME","W7 Handover scenario","RPME")]
+for j, h in enumerate(["Client","Project"] + OV_STAGES + ["Kick-off key"], 1):
+    c = ov.cell(row=4, column=j, value=h); c.font = font(bold=True, color="FFFFFF"); c.fill = HEAD
+    c.alignment = Alignment(horizontal="center" if j > 2 else "left", vertical="center", wrap_text=True)
+PCo, PSt, PSg = (f"Planning!${x}${FIRST}:${x}${LAST}" for x in "CFS")
+for i, (cl, pj, key) in enumerate(OV_PROJECTS):
+    n = 5 + i
+    ov.cell(row=n, column=1, value=cl).fill = fill(cfill[cl]); ov.cell(row=n, column=2, value=pj); ov.cell(row=n, column=10, value=key)
+    for j, stg in enumerate(OV_STAGES, 3):
+        who = f"$J{n}" if stg == "Kick-off" else f"$B{n}"
+        cnt = f'COUNTIFS({PCo},{who},{PSg},"{stg}")'
+        def k(v): return f'COUNTIFS({PCo},{who},{PSg},"{stg}",{PSt},"{v}")'
+        ov.cell(row=n, column=j, value=(f'=IF({cnt}=0,"—",IF({k("Blocked")}>0,"Blocked",IF({k("Done")}={cnt},"Done",'
+                                      f'IF({k("Done")}+{k("In progress")}>0,"In progress",IF({k("To confirm")}>0,"To confirm","Not started")))))'))
+    for j in range(1, 10):
+        c = ov.cell(row=n, column=j); c.font = font(); c.border = box
+        c.alignment = Alignment(horizontal="center" if j > 2 else "left", vertical="center")
+    ov.row_dimensions[n].height = 26
+OVL = 4 + len(OV_PROJECTS)
+for val, bg, fc in [("Done","C6EFCE","006100"),("In progress","BDD7EE","1F4E79"),("Blocked","F4B183","833C0B"),("To confirm","FFF2CC","7F6000")]:
+    ov.conditional_formatting.add(f"C5:I{OVL}", FormulaRule(formula=[f'C5="{val}"'], fill=fill(bg), font=Font(name=F, bold=True, color=fc)))
+ov.conditional_formatting.add(f"C5:I{OVL}", FormulaRule(formula=['C5="Not started"'], fill=fill("F2F2F2"), font=Font(name=F, color="7F7F7F")))
+ov.conditional_formatting.add(f"C5:I{OVL}", FormulaRule(formula=['C5="—"'], font=Font(name=F, color="BFBFBF")))
+for col, wd in zip("ABCDEFGHIJ", (10, 26, 12, 12, 12, 12, 12, 12, 14, 12)): ov.column_dimensions[col].width = wd
+ov.column_dimensions["J"].hidden = True; ov.row_dimensions[4].height = 26
+ov.page_setup.orientation = "landscape"; ov.page_setup.fitToWidth = 1; ov.page_setup.fitToHeight = 0
+wb.remove(sm)
 wb.save(OUT); print("saved", len(rows), len(projects))
