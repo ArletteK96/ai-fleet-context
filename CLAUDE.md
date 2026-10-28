@@ -38,6 +38,8 @@ Base OneDrive d'Arlette : `AI Project Management/Projects 2026/AI FLEET/`
 - Documentation technique : site Tremplin, `Documentation Technique, Coptain, Idorsia, RPME`
 - Décisions et échanges : Teams, discussions avec Matthieu.
 
+MED procède un workflow à la fois (Arlette, 28/10) : EcoVadis d'abord. Le retour du 21/10 demande un rework total ; EcoEntreprise et Self-assessment ne seront relancés qu'une fois le cas EcoVadis réglé, avec le même processus, après avoir été remis en question. Ne jamais planifier les trois workflows MED en parallèle.
+
 ## Les trois chantiers (état au 26/10, à vérifier dans les suivis)
 - MED : workflows EcoVadis (validé sur M et XS), EcoEntreprise (en cours), auto-évaluation (retour attendu côté MED). La référente MED est Isabelle.
 - Engage : récap quiz et Miss Engage (agent d'accueil) en cadrage. Le challenge SEEPH 2026 est le pilote.
